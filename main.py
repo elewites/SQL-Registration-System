@@ -101,7 +101,10 @@ def show():
 # creating tkinter window
 window = Tk()
 window.geometry('800x600')
-window.title("Python Tkinter MySql")
+window.title("Registration System")
+
+title = Label(window, text='Add/Delete/Update Employee Details to Database', font=('bold', 10))
+title.place(x=200, y=2)
 
 # id label
 id = Label(window, text='Enter ID', font=('bold', 10))
