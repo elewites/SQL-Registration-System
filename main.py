@@ -2,9 +2,13 @@ from tkinter import *
 import tkinter.messagebox as MessageBox
 import mysql.connector as mysql
 
+# mysql connection variables
+host = 'localhost'
+user = 'root'
+password = 'password'
+database = 'registration_system'
 
 # functions
-
 # inserts employee into database with given id, name, and phone number
 def insert():
     id = e_id.get()
@@ -14,7 +18,7 @@ def insert():
     if (id=="" or name=="" or phone==""):
         MessageBox.showinfo("Insert Status", "All Fields are required")
     else:
-        connection = mysql.connect(host="localhost",user="root", password="password", database="registration_system")
+        connection = mysql.connect(host=host,user=user, password=password, database=database)
         cursor = connection.cursor()
         cursor.execute("insert into employees values ('"+id+"','"+name+"','"+phone+"')")
         cursor.execute("commit")
@@ -31,7 +35,7 @@ def delete():
     if (e_id.get() == ""):
         MessageBox.showinfo("Delete Status", "ID is required for delete")
     else:
-        connection = mysql.connect(host="localhost",user="root", password="password", database="registration_system")
+        connection = mysql.connect(host=host,user=user, password=password, database=database)
         cursor = connection.cursor()
         cursor.execute("delete from employees where id='"+e_id.get()+"'")
         cursor.execute("commit")
@@ -53,7 +57,7 @@ def update():
     if (id == "" or name == "" or phone == ""):
         MessageBox.showinfo("Update Status", "All Fields are required")
     else:
-        connection = mysql.connect(host="localhost", user="root", password="password", database="registration_system")
+        connection = mysql.connect(host=host, user=user, password=password, database=database)
         cursor = connection.cursor()
         cursor.execute("update employees set name='"+name+"',phone='"+phone+"'where id='"+id+"'")
         cursor.execute("commit")
@@ -71,7 +75,7 @@ def get():
     if (e_id.get() == ""):
         MessageBox.showinfo("Fetch Status", "ID is required for delete")
     else:
-        connection = mysql.connect(host="localhost",user="root", password="password", database="registration_system")
+        connection = mysql.connect(host=host,user=user, password=password, database=database)
         cursor = connection.cursor()
         cursor.execute("select * from employees where id='"+e_id.get()+"'")
         rows = cursor.fetchall()
@@ -85,7 +89,7 @@ def get():
 
 # fetches all employees from database to display in interface
 def show():
-    connection = mysql.connect(host="localhost", user="root", password="password", database="registration_system")
+    connection = mysql.connect(host=host, user=user, password=password, database=database)
     cursor = connection.cursor()
     cursor.execute("select * from employees")
     rows = cursor.fetchall()
