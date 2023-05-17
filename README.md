@@ -2,6 +2,10 @@
 
 This is a registration system for employees
 
+## Video Demo 
+
+
+
 ## Interface
 The user interface is developed used tkinter GUI toolkit
 - The program allows to add a new employee to the database with an id, name, and phone number
