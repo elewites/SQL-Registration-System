@@ -49,14 +49,7 @@ These details are necessary to connect to the local database you are running on 
 
 Once all is set, you are good to go, and can run the python script in your command line. 
 
-### Alternatively
-Alternatively you can try dowloading the main.exe file
-- clicking on it should run automatically if you have python installed 
+### Main.exe file
 
-(doing this might run the app without having the need to install dependencies but I am not sure)
-
-You could try both, first without installing the dependencies and then with if it does not work the first time
-
-- This `.exe` file was created using the package [pyinstaller](https://pyinstaller.org/en/stable/) so it is safe to use (in case your machine gives you any warnings)
-- however if you will make changes to the script (specifically database credentials), this option is not best as those changes will not be reflected in the `main.exe` file
-- **And most importantly, you must always run the `sql` script first in order to instantiate the database in your local machine**
+- This `.exe` file was created using the package [pyinstaller](https://pyinstaller.org/en/stable/)
+- With the aforementioned setup in place, executing the main.exe file will seamlessly launch the application, eliminating the need for manual command line execution upon each use.
